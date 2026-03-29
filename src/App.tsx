@@ -38,6 +38,7 @@ const App = () => (
             <Route path="/dashboard/yield" element={<YieldPrediction />} />
             <Route path="/dashboard/government" element={<GovernmentSupport />} />
             <Route path="/dashboard/assist" element={<FarmerAssistance />} />
+            <Route path="/dashboard/map" element={<AgriMap />} />
             <Route path="/crops" element={<Crops />} />
             <Route path="/about" element={<About />} />
             <Route path="/settings" element={<SettingsPage />} />

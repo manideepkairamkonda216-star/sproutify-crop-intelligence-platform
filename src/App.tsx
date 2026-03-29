@@ -13,6 +13,7 @@ import AiChat from "./pages/dashboard/AiChat";
 import YieldPrediction from "./pages/dashboard/YieldPrediction";
 import GovernmentSupport from "./pages/dashboard/GovernmentSupport";
 import FarmerAssistance from "./pages/dashboard/FarmerAssistance";
+import AgriMap from "./pages/dashboard/AgriMap";
 import Crops from "./pages/Crops";
 import About from "./pages/About";
 import SettingsPage from "./pages/SettingsPage";
@@ -37,6 +38,7 @@ const App = () => (
             <Route path="/dashboard/yield" element={<YieldPrediction />} />
             <Route path="/dashboard/government" element={<GovernmentSupport />} />
             <Route path="/dashboard/assist" element={<FarmerAssistance />} />
+            <Route path="/dashboard/map" element={<AgriMap />} />
             <Route path="/crops" element={<Crops />} />
             <Route path="/about" element={<About />} />
             <Route path="/settings" element={<SettingsPage />} />

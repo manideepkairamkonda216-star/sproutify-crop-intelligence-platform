@@ -10,6 +10,9 @@ import DashboardHome from "./pages/dashboard/DashboardHome";
 import CropDetection from "./pages/dashboard/CropDetection";
 import Weather from "./pages/dashboard/Weather";
 import AiChat from "./pages/dashboard/AiChat";
+import YieldPrediction from "./pages/dashboard/YieldPrediction";
+import GovernmentSupport from "./pages/dashboard/GovernmentSupport";
+import FarmerAssistance from "./pages/dashboard/FarmerAssistance";
 import Crops from "./pages/Crops";
 import About from "./pages/About";
 import SettingsPage from "./pages/SettingsPage";
@@ -31,6 +34,9 @@ const App = () => (
             <Route path="/dashboard/detect" element={<CropDetection />} />
             <Route path="/dashboard/weather" element={<Weather />} />
             <Route path="/dashboard/chat" element={<AiChat />} />
+            <Route path="/dashboard/yield" element={<YieldPrediction />} />
+            <Route path="/dashboard/government" element={<GovernmentSupport />} />
+            <Route path="/dashboard/assist" element={<FarmerAssistance />} />
             <Route path="/crops" element={<Crops />} />
             <Route path="/about" element={<About />} />
             <Route path="/settings" element={<SettingsPage />} />

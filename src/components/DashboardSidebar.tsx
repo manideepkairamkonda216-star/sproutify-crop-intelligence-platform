@@ -1,11 +1,14 @@
-import { Sprout, LayoutDashboard, Scan, CloudSun, MessageSquare, Wheat, Info, Settings, LogOut } from "lucide-react";
+import { Sprout, LayoutDashboard, Scan, CloudSun, MessageSquare, Wheat, Info, Settings, LogOut, BarChart3, Landmark, Heart } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const navItems = [
   { icon: LayoutDashboard, label: "Dashboard", path: "/dashboard" },
   { icon: Scan, label: "Crop Detection", path: "/dashboard/detect" },
+  { icon: BarChart3, label: "Yield Prediction", path: "/dashboard/yield" },
   { icon: CloudSun, label: "Weather", path: "/dashboard/weather" },
   { icon: MessageSquare, label: "AI Chat", path: "/dashboard/chat" },
+  { icon: Landmark, label: "Govt Support", path: "/dashboard/government" },
+  { icon: Heart, label: "Farmer Assist", path: "/dashboard/assist" },
   { icon: Wheat, label: "Crops", path: "/crops" },
   { icon: Info, label: "About", path: "/about" },
   { icon: Settings, label: "Settings", path: "/settings" },
@@ -22,7 +25,7 @@ export default function DashboardSidebar() {
         <span className="font-display text-lg font-bold gradient-text">Sproutify</span>
       </Link>
 
-      <nav className="flex-1 px-3 py-4 space-y-1">
+      <nav className="flex-1 px-3 py-4 space-y-1 overflow-auto">
         {navItems.map((item) => {
           const active = location.pathname === item.path;
           return (

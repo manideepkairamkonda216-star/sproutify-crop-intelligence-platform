@@ -1,4 +1,4 @@
-import { Sprout, LayoutDashboard, Scan, CloudSun, MessageSquare, Wheat, Info, Settings, LogOut, BarChart3, Landmark, Heart, MapPin } from "lucide-react";
+import { Sprout, LayoutDashboard, Scan, CloudSun, MessageSquare, Wheat, Info, Settings, LogOut, BarChart3, Landmark, Heart, MapPin, ShoppingCart } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const navItems = [
@@ -10,6 +10,7 @@ const navItems = [
   { icon: Landmark, label: "Govt Support", path: "/dashboard/government" },
   { icon: Heart, label: "Farmer Assist", path: "/dashboard/assist" },
   { icon: MapPin, label: "Agri Map", path: "/dashboard/map" },
+  { icon: ShoppingCart, label: "Products", path: "/dashboard/products" },
   { icon: Wheat, label: "Crops", path: "/crops" },
   { icon: Info, label: "About", path: "/about" },
   { icon: Settings, label: "Settings", path: "/settings" },

@@ -5,7 +5,7 @@ const sections = [
   {
     icon: Target,
     title: "Our Mission",
-    text: "Sproutify empowers farmers and agronomists with AI-driven tools to detect crop diseases early, reduce losses, and improve yields worldwide.",
+    text: "Agrocare empowers farmers and agronomists with AI-driven tools to detect crop diseases early, reduce losses, and improve yields worldwide.",
   },
   {
     icon: Cpu,
@@ -22,12 +22,12 @@ const sections = [
 export default function About() {
   return (
     <>
-      <DashboardNavbar title="About Sproutify" />
+      <DashboardNavbar title="About Agrocare" />
       <main className="flex-1 p-6 overflow-auto">
         <div className="max-w-3xl mx-auto space-y-6">
           <div className="text-center mb-8 animate-fade-in">
             <h2 className="font-display text-3xl font-bold mb-3">
-              About <span className="gradient-text">Sproutify</span>
+              About <span className="gradient-text">Agrocare</span>
             </h2>
             <p className="text-muted-foreground">
               An AI-powered crop intelligence platform built for modern agriculture.

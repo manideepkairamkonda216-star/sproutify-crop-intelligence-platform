@@ -27,7 +27,7 @@ export default function Login() {
       <div className="w-full max-w-md animate-fade-in">
         <Link to="/" className="flex items-center justify-center gap-2 mb-8">
           <Sprout className="h-8 w-8 text-primary" />
-          <span className="font-display text-2xl font-bold gradient-text">Sproutify</span>
+          <span className="font-display text-2xl font-bold gradient-text">Agrocare</span>
         </Link>
 
         <div className="glass-card p-8">
@@ -35,7 +35,7 @@ export default function Login() {
             {isLogin ? "Welcome Back" : "Create Account"}
           </h2>
           <p className="text-sm text-muted-foreground text-center mb-6">
-            {isLogin ? "Sign in to your account" : "Get started with Sproutify"}
+            {isLogin ? "Sign in to your account" : "Get started with Agrocare"}
           </p>
 
           <form onSubmit={handleSubmit} className="space-y-4">

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import { Leaf, CloudSun, Brain, Shield, ArrowRight, Sprout, Upload, Scan, Pill, BarChart3, MapPin, Phone, Users, TrendingUp, CheckCircle, Star, ChevronRight } from "lucide-react";
+import { Leaf, CloudSun, Brain, Shield, ArrowRight, Sprout, Upload, Scan, Pill, BarChart3, MapPin, Phone, Users, TrendingUp, CheckCircle, Star, ChevronRight, Sun, Moon } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroBg from "@/assets/hero-bg.jpg";
+import { useTheme } from "@/contexts/ThemeContext";
 
 const features = [
   {
@@ -53,7 +53,7 @@ const testimonials = [
   {
     name: "Rajesh Patel",
     role: "Rice Farmer, Gujarat",
-    text: "Sproutify detected bacterial leaf blight in my rice field two weeks before I would have noticed it. Saved nearly 30% of my yield that season.",
+    text: "Agrocare detected bacterial leaf blight in my rice field two weeks before I would have noticed it. Saved nearly 30% of my yield that season.",
     rating: 5,
   },
   {
@@ -65,7 +65,7 @@ const testimonials = [
   {
     name: "Arun Kumar",
     role: "Wheat Farmer, Punjab",
-    text: "Weather-based crop recommendations changed how I plan my planting cycle. My yield increased by 20% in the first year of using Sproutify.",
+    text: "Weather-based crop recommendations changed how I plan my planting cycle. My yield increased by 20% in the first year of using Agrocare.",
     rating: 5,
   },
 ];
@@ -78,6 +78,8 @@ const impactStats = [
 ];
 
 export default function Landing() {
+  const { theme, toggleTheme } = useTheme();
+
   return (
     <div className="page-gradient">
       {/* Navbar */}
@@ -85,12 +87,15 @@ export default function Landing() {
         <div className="container mx-auto px-6 h-16 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2">
             <Sprout className="h-7 w-7 text-primary" />
-            <span className="font-display text-xl font-bold gradient-text">Sproutify</span>
+            <span className="font-display text-xl font-bold gradient-text">Agrocare</span>
           </Link>
           <div className="hidden md:flex items-center gap-8">
             <a href="#how-it-works" className="text-sm text-muted-foreground hover:text-foreground transition-colors">How It Works</a>
-            <a href="#why-sproutify" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Why Sproutify</a>
+            <a href="#why-agrocare" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Why Agrocare</a>
             <Link to="/about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">About</Link>
+            <Button variant="ghost" size="icon" className="text-muted-foreground hover:text-foreground" onClick={toggleTheme}>
+              {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+            </Button>
             <Link to="/login">
               <Button size="sm" className="gradient-bg text-primary-foreground font-semibold hover:opacity-90 transition-opacity">
                 Get Started
@@ -102,10 +107,11 @@ export default function Landing() {
 
       {/* Hero */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
-        <div className="absolute inset-0 opacity-20">
-          <img src={heroBg} alt="" className="w-full h-full object-cover" />
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-secondary/5 to-accent/10 animate-fade-in-slow" />
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/8 rounded-full blur-3xl animate-float" />
+          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-secondary/8 rounded-full blur-3xl animate-float" style={{ animationDelay: "3s" }} />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background" />
 
         <div className="relative z-10 container mx-auto px-6 text-center">
           <div className="inline-flex items-center gap-2 glass-card px-4 py-2 mb-8 animate-fade-in">
@@ -114,7 +120,7 @@ export default function Landing() {
           </div>
 
           <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold mb-6 animate-fade-in" style={{ animationDelay: "0.1s" }}>
-            <span className="gradient-text">Sproutify</span>
+            <span className="gradient-text">Agrocare</span>
           </h1>
 
           <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-4 animate-fade-in" style={{ animationDelay: "0.2s" }}>
@@ -186,7 +192,7 @@ export default function Landing() {
           <div className="text-center mb-16">
             <p className="text-sm text-primary font-semibold uppercase tracking-wider mb-3">Simple Process</p>
             <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">
-              How <span className="gradient-text">Sproutify</span> Works
+              How <span className="gradient-text">Agrocare</span> Works
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
               From uploading a photo to receiving actionable insights — it takes less than 30 seconds.
@@ -213,21 +219,21 @@ export default function Landing() {
         </div>
       </section>
 
-      {/* Why Sproutify */}
-      <section id="why-sproutify" className="py-24 relative border-t border-border/20">
+      {/* Why Agrocare */}
+      <section id="why-agrocare" className="py-24 relative border-t border-border/20">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <p className="text-sm text-primary font-semibold uppercase tracking-wider mb-3">Why Choose Us</p>
             <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">
-              Why <span className="gradient-text">Sproutify</span> Over Traditional Methods
+              Why <span className="gradient-text">Agrocare</span> Over Traditional Methods
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
-              Traditional crop diagnosis takes days, costs money, and requires expert access. Sproutify changes everything.
+              Traditional crop diagnosis takes days, costs money, and requires expert access. Agrocare changes everything.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {advantages.map((a, i) => (
+            {advantages.map((a) => (
               <div key={a.title} className="glass-card p-6 hover-lift">
                 <div className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-primary mt-0.5 shrink-0" />
@@ -252,7 +258,7 @@ export default function Landing() {
                 Transforming <span className="gradient-text">Farmer Livelihoods</span>
               </h2>
               <p className="text-muted-foreground mb-8 leading-relaxed">
-                Sproutify isn't just technology — it's a lifeline for farmers facing unpredictable weather, evolving diseases, and limited access to agricultural expertise. Our platform bridges the gap between cutting-edge AI research and the fields where food is grown.
+                Agrocare isn't just technology — it's a lifeline for farmers facing unpredictable weather, evolving diseases, and limited access to agricultural expertise. Our platform bridges the gap between cutting-edge AI research and the fields where food is grown.
               </p>
               <div className="space-y-4">
                 {[
@@ -326,11 +332,11 @@ export default function Landing() {
                 Ready to Protect Your <span className="gradient-text">Crops</span>?
               </h2>
               <p className="text-muted-foreground max-w-lg mx-auto mb-8">
-                Join thousands of farmers who are already using Sproutify to detect diseases early, access government support, and maximize their yield.
+                Join thousands of farmers who are already using Agrocare to detect diseases early, access government support, and maximize their yield.
               </p>
               <Link to="/login">
                 <Button size="lg" className="gradient-bg text-primary-foreground font-semibold text-lg px-10 py-6 hover:opacity-90 transition-all hover:scale-105">
-                  Start Using Sproutify <ArrowRight className="ml-2 h-5 w-5" />
+                  Start Using Agrocare <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
             </div>
@@ -345,7 +351,7 @@ export default function Landing() {
             <div>
               <div className="flex items-center gap-2 mb-4">
                 <Sprout className="h-5 w-5 text-primary" />
-                <span className="font-display font-semibold gradient-text">Sproutify</span>
+                <span className="font-display font-semibold gradient-text">Agrocare</span>
               </div>
               <p className="text-sm text-muted-foreground leading-relaxed">AI-powered crop intelligence platform helping farmers detect diseases, predict yields, and access government support.</p>
             </div>
@@ -367,13 +373,13 @@ export default function Landing() {
             <div>
               <h4 className="font-display font-semibold mb-3 text-sm">Support</h4>
               <div className="space-y-2">
-                <p className="text-sm text-muted-foreground">help@sproutify.in</p>
+                <p className="text-sm text-muted-foreground">help@agrocare.in</p>
                 <p className="text-sm text-muted-foreground">1800-180-1551</p>
               </div>
             </div>
           </div>
           <div className="border-t border-border/30 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-sm text-muted-foreground">© 2026 Sproutify. All rights reserved.</p>
+            <p className="text-sm text-muted-foreground">© 2026 Agrocare. All rights reserved.</p>
             <div className="flex gap-6">
               <Link to="/about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">About</Link>
               <Link to="/crops" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Crops</Link>

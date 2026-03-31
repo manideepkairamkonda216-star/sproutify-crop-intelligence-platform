@@ -19,37 +19,48 @@ import Crops from "./pages/Crops";
 import About from "./pages/About";
 import SettingsPage from "./pages/SettingsPage";
 import NotFound from "./pages/NotFound";
+import { useEffect } from "react";
 
 const queryClient = new QueryClient();
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Landing />} />
-          <Route path="/login" element={<Login />} />
-          <Route element={<DashboardLayout />}>
-            <Route path="/dashboard" element={<DashboardHome />} />
-            <Route path="/dashboard/detect" element={<CropDetection />} />
-            <Route path="/dashboard/weather" element={<Weather />} />
-            <Route path="/dashboard/chat" element={<AiChat />} />
-            <Route path="/dashboard/yield" element={<YieldPrediction />} />
-            <Route path="/dashboard/government" element={<GovernmentSupport />} />
-            <Route path="/dashboard/assist" element={<FarmerAssistance />} />
-            <Route path="/dashboard/map" element={<AgriMap />} />
-            <Route path="/dashboard/products" element={<ProductMarketplace />} />
-            <Route path="/crops" element={<Crops />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/settings" element={<SettingsPage />} />
-          </Route>
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+const App = () => {
+
+  useEffect(() => {
+  fetch("http://127.0.0.1:5000/api/message")
+    .then(res => res.json())
+    .then(data => console.log("DATA", data))
+    .catch(err => console.error(err));
+}, []);
+
+  return (
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Landing />} />
+            <Route path="/login" element={<Login />} />
+            <Route element={<DashboardLayout />}>
+              <Route path="/dashboard" element={<DashboardHome />} />
+              <Route path="/dashboard/detect" element={<CropDetection />} />
+              <Route path="/dashboard/weather" element={<Weather />} />
+              <Route path="/dashboard/chat" element={<AiChat />} />
+              <Route path="/dashboard/yield" element={<YieldPrediction />} />
+              <Route path="/dashboard/government" element={<GovernmentSupport />} />
+              <Route path="/dashboard/assist" element={<FarmerAssistance />} />
+              <Route path="/dashboard/map" element={<AgriMap />} />
+              <Route path="/dashboard/products" element={<ProductMarketplace />} />
+              <Route path="/crops" element={<Crops />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/settings" element={<SettingsPage />} />
+            </Route>
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
+  );
+};
 
 export default App;

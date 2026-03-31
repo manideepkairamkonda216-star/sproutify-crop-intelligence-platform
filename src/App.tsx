@@ -27,11 +27,8 @@ const queryClient = new QueryClient();
 
 const App = () => {
 
-  useEffect(() => {
-  fetch("http://127.0.0.1:5000/api/message")
-    .then(res => res.json())
-    .then(data => console.log("DATA", data))
-    .catch(err => console.error(err));
+useEffect(() => {
+  console.log("Preview mode - backend disabled");
 }, []);
 
   return (
@@ -53,6 +50,10 @@ const App = () => {
               <Route path="/dashboard/assist" element={<FarmerAssistance />} />
               <Route path="/dashboard/map" element={<AgriMap />} />
               <Route path="/dashboard/products" element={<ProductMarketplace />} />
+
+              {/* ✅ FIX ADDED HERE */}
+              <Route path="/dashboard/water" element={<WaterManagement />} />
+
               <Route path="/crops" element={<Crops />} />
               <Route path="/about" element={<About />} />
               <Route path="/settings" element={<SettingsPage />} />

@@ -15,9 +15,11 @@ import GovernmentSupport from "./pages/dashboard/GovernmentSupport";
 import FarmerAssistance from "./pages/dashboard/FarmerAssistance";
 import AgriMap from "./pages/dashboard/AgriMap";
 import ProductMarketplace from "./pages/dashboard/ProductMarketplace";
+import WaterManagement from "./pages/dashboard/WaterManagement";
 import Crops from "./pages/Crops";
 import About from "./pages/About";
 import SettingsPage from "./pages/SettingsPage";
+import ProfilePage from "./pages/ProfilePage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -41,9 +43,11 @@ const App = () => (
             <Route path="/dashboard/assist" element={<FarmerAssistance />} />
             <Route path="/dashboard/map" element={<AgriMap />} />
             <Route path="/dashboard/products" element={<ProductMarketplace />} />
+            <Route path="/dashboard/water" element={<WaterManagement />} />
             <Route path="/crops" element={<Crops />} />
             <Route path="/about" element={<About />} />
             <Route path="/settings" element={<SettingsPage />} />
+            <Route path="/profile" element={<ProfilePage />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>

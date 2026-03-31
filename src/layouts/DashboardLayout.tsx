@@ -1,5 +1,6 @@
 import { Outlet } from "react-router-dom";
 import DashboardSidebar from "@/components/DashboardSidebar";
+import FloatingChatbot from "@/components/FloatingChatbot";
 
 export default function DashboardLayout() {
   return (
@@ -8,6 +9,7 @@ export default function DashboardLayout() {
       <div className="flex-1 flex flex-col min-h-screen">
         <Outlet />
       </div>
+      <FloatingChatbot />
     </div>
   );
 }

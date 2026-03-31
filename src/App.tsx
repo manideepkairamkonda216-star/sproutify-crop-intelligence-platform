@@ -15,9 +15,11 @@ import GovernmentSupport from "./pages/dashboard/GovernmentSupport";
 import FarmerAssistance from "./pages/dashboard/FarmerAssistance";
 import AgriMap from "./pages/dashboard/AgriMap";
 import ProductMarketplace from "./pages/dashboard/ProductMarketplace";
+import WaterManagement from "./pages/dashboard/WaterManagement";
 import Crops from "./pages/Crops";
 import About from "./pages/About";
 import SettingsPage from "./pages/SettingsPage";
+import ProfilePage from "./pages/ProfilePage";
 import NotFound from "./pages/NotFound";
 import { useEffect } from "react";
 

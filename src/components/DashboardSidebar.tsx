@@ -1,4 +1,4 @@
-import { Sprout, LayoutDashboard, Scan, CloudSun, MessageSquare, Wheat, Info, Settings, LogOut, BarChart3, Landmark, Heart, MapPin, ShoppingCart, Droplets, User } from "lucide-react";
+import { Leaf, LayoutDashboard, Scan, CloudSun, MessageSquare, Wheat, Info, Settings, LogOut, BarChart3, Landmark, Heart, MapPin, ShoppingCart, Droplets, User } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -24,23 +24,25 @@ export default function DashboardSidebar() {
   const { t } = useLanguage();
 
   return (
-    <aside className="w-64 min-h-screen border-r border-border/30 bg-card/50 backdrop-blur-sm flex flex-col">
-      <Link to="/" className="flex items-center gap-2 px-6 py-5 border-b border-border/30">
-        <Sprout className="h-6 w-6 text-primary" />
-        <span className="font-display text-lg font-bold gradient-text">Agrocare</span>
+    <aside className="w-64 min-h-screen border-r border-border bg-card flex flex-col">
+      <Link to="/" className="flex items-center gap-3 px-6 py-5 border-b border-border">
+        <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
+          <Leaf className="h-4 w-4 text-primary-foreground" />
+        </div>
+        <span className="font-display text-lg font-bold text-primary">Agrocare</span>
       </Link>
 
-      <nav className="flex-1 px-3 py-4 space-y-1 overflow-auto">
+      <nav className="flex-1 px-3 py-4 space-y-0.5 overflow-auto">
         {navItems.map((item) => {
           const active = location.pathname === item.path;
           return (
             <Link
               key={item.path}
               to={item.path}
-              className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-all ${
+              className={`flex items-center gap-3 px-3 py-2.5 rounded-md text-sm transition-colors ${
                 active
-                  ? "bg-primary/10 text-primary font-medium"
-                  : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                  ? "bg-primary/10 text-primary font-medium border-l-2 border-primary"
+                  : "text-muted-foreground hover:text-foreground hover:bg-muted"
               }`}
             >
               <item.icon className="h-4 w-4" />
@@ -50,13 +52,13 @@ export default function DashboardSidebar() {
         })}
       </nav>
 
-      <div className="px-3 py-4 border-t border-border/30 space-y-1">
+      <div className="px-3 py-4 border-t border-border space-y-0.5">
         <Link
           to="/profile"
-          className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-all ${
+          className={`flex items-center gap-3 px-3 py-2.5 rounded-md text-sm transition-colors ${
             location.pathname === "/profile"
               ? "bg-primary/10 text-primary font-medium"
-              : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+              : "text-muted-foreground hover:text-foreground hover:bg-muted"
           }`}
         >
           <User className="h-4 w-4" />
@@ -64,7 +66,7 @@ export default function DashboardSidebar() {
         </Link>
         <button
           onClick={() => navigate("/login")}
-          className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 w-full transition-all"
+          className="flex items-center gap-3 px-3 py-2.5 rounded-md text-sm text-muted-foreground hover:text-foreground hover:bg-muted w-full transition-colors"
         >
           <LogOut className="h-4 w-4" />
           {t("signOut")}

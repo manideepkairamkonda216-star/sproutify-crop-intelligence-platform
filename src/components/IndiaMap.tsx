@@ -11,10 +11,9 @@ export default function IndiaMap({ selectedState, onStateSelect }: IndiaMapProps
 
   return (
     <div className="glass-card p-6 flex flex-col items-center">
-      <h3 className="font-display text-lg font-semibold mb-4 gradient-text">Interactive India Map</h3>
+      <h3 className="font-display text-lg font-semibold mb-4 text-foreground">Interactive India Map</h3>
       <p className="text-xs text-muted-foreground mb-4">Click a state to explore agricultural data</p>
       <svg viewBox="60 30 430 500" className="w-full max-w-md">
-        {/* Background outline */}
         <rect x="60" y="30" width="430" height="500" fill="transparent" />
 
         {Object.entries(statePathsData).map(([name, data]) => {
@@ -27,20 +26,20 @@ export default function IndiaMap({ selectedState, onStateSelect }: IndiaMapProps
                 d={data.d}
                 fill={
                   isSelected
-                    ? "hsl(142 60% 45% / 0.4)"
+                    ? "hsl(130 50% 35% / 0.3)"
                     : isHovered
-                    ? "hsl(200 70% 45% / 0.3)"
-                    : "hsl(220 18% 15% / 0.6)"
+                    ? "hsl(30 100% 60% / 0.2)"
+                    : "hsl(130 20% 92%)"
                 }
                 stroke={
                   isSelected
-                    ? "hsl(142 60% 50%)"
+                    ? "hsl(130 60% 25%)"
                     : isHovered
-                    ? "hsl(200 70% 55%)"
-                    : "hsl(220 15% 30%)"
+                    ? "hsl(30 100% 50%)"
+                    : "hsl(0 0% 70%)"
                 }
                 strokeWidth={isSelected ? 2.5 : isHovered ? 2 : 1}
-                className="cursor-pointer transition-all duration-300"
+                className="cursor-pointer transition-all duration-200"
                 onClick={() => onStateSelect(name)}
                 onMouseEnter={() => setHoveredState(name)}
                 onMouseLeave={() => setHoveredState(null)}
@@ -51,7 +50,7 @@ export default function IndiaMap({ selectedState, onStateSelect }: IndiaMapProps
                 textAnchor="middle"
                 dominantBaseline="middle"
                 fontSize="9"
-                fill={isSelected ? "hsl(142 60% 70%)" : "hsl(220 10% 60%)"}
+                fill={isSelected ? "hsl(130 60% 20%)" : "hsl(0 0% 40%)"}
                 className="pointer-events-none select-none font-medium"
               >
                 {name.length > 10 ? name.slice(0, 8) + "…" : name}

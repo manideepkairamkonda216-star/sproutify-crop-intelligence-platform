@@ -7,18 +7,18 @@ export default function DashboardNavbar({ title }: { title: string }) {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <header className="h-16 border-b border-border/30 bg-card/30 backdrop-blur-sm flex items-center justify-between px-6">
-      <h1 className="font-display text-lg font-semibold">{title}</h1>
-      <div className="flex items-center gap-3">
-        <Button variant="ghost" size="icon" className="text-muted-foreground hover:text-foreground" onClick={toggleTheme}>
-          {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+    <header className="h-14 border-b border-border bg-card flex items-center justify-between px-6">
+      <h1 className="font-display text-base font-semibold text-foreground">{title}</h1>
+      <div className="flex items-center gap-2">
+        <Button variant="ghost" size="icon" className="text-muted-foreground hover:text-foreground h-8 w-8" onClick={toggleTheme}>
+          {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
         </Button>
-        <Button variant="ghost" size="icon" className="text-muted-foreground hover:text-foreground">
-          <Bell className="h-5 w-5" />
+        <Button variant="ghost" size="icon" className="text-muted-foreground hover:text-foreground h-8 w-8">
+          <Bell className="h-4 w-4" />
         </Button>
         <Link to="/profile">
-          <div className="w-8 h-8 rounded-full gradient-bg flex items-center justify-center cursor-pointer hover:scale-110 transition-transform">
-            <User className="h-4 w-4 text-primary-foreground" />
+          <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center cursor-pointer hover:bg-primary/20 transition-colors">
+            <User className="h-4 w-4 text-primary" />
           </div>
         </Link>
       </div>
